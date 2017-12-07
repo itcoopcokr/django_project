@@ -51,7 +51,7 @@ Django==1.10
 
 <br/>
 
-## .gitignore 
+## .gitignore 파일 생성 
 ~~~
 # Created by https://www.gitignore.io/api/pycharm,python,django
 

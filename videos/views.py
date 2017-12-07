@@ -14,4 +14,9 @@ class HomeView(View):
         # text += '<h3>랜덤숫자</h3>['+number+']'
         #
         # return HttpResponse(text)
-        return render(request, "home.html", { } )
+        context = {
+            "name" :"John",
+            "number" : number,
+            "present" :"<ul><li>내용1</li><li>내용2</li></ul>"
+        }
+        return render(request, "home.html", context )

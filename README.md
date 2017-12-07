@@ -49,6 +49,11 @@ Django==1.10
 (django_project) $ pip freeze >> requirements.txt
 ~~~
 
+- 현재 패키지 인스톨 
+~~~
+(django_project) $ pip install -r requirements.txt
+~~~
+ 
 <br/>
 
 ## .gitignore 파일 생성 

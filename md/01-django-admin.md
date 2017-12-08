@@ -21,14 +21,37 @@ $ django-admin.py startproject mysite
 $ python manage.py runserver
 ~~~
 
-- admin
-    - http://localhost:8000/admin/
+- http://localhost:8000
+
+<br/>
     
-- 새로운 애플리케이션 생성 
-~~~
 
 - DB 생성 
 ~~~    
 $ python manage.py makemigrations
 $ python manage.py migrate 
 ~~~
+
+<br/>
+
+- 슈퍼유저 생성 
+~~~
+$ python manage.py createsuperuser
+username : admin
+email : a@a.com
+password : admin1234
+~~~
+
+<br/>
+
+- 장고 서버 실행 
+~~~
+$ python manage.py runserver
+~~~
+
+- admin 관리자 보기 
+    - http://localhost:8000/admin/
+    
+
+
+    

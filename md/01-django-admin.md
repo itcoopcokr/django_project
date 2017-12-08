@@ -14,6 +14,7 @@ $ django-admin.py startproject mysite
     manage.py
 ~~~    
 
+
 <br>
 - 장고 서버 실행 
 ~~~
@@ -26,4 +27,8 @@ $ python manage.py runserver
 - 새로운 애플리케이션 생성 
 ~~~
 
+- DB 생성 
 ~~~    
+$ python manage.py makemigrations
+$ python manage.py migrate 
+~~~

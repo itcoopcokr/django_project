@@ -5,6 +5,6 @@ from django.shortcuts import render
 class Team(View):
     def get(self, request, *args, **kwargs):
         context = {
-            "name":"john"
+            "name":"john",
         }
         return render(request,"team.html", context )

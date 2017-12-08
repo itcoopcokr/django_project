@@ -18,10 +18,11 @@ from django.contrib import admin
 
 from videos.views import home
 from videos.views import HomeView
+from .views import Team
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^$', home, name='home'),
-    url(r'^$', HomeView.as_view(), name='home'),
-
+    # url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^team/$', Team.as_view())
 ]

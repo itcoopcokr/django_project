@@ -15,6 +15,18 @@ git push itcoop_django
 
 <br/>
 
+## 기본 파이썬 환경 설치 
+- pip : python install package 
+~~~
+$ pip install virtualenv
+~~~
+
+## 가상환경 설정 
+~~~
+$ virtualenv .
+$ virtualenv -p python3.4 .
+~~~
+
 ## 커맨드 라인
 - 커맨드 라인에서 django_project 폴더로 이동 
 ~~~

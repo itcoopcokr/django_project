@@ -17,10 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from .views import Home, Base, Team
+from videos.views import VideoListView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Home.as_view()),
     url(r'^base/$', Base.as_view()),
-    url(r'^team/$', Team.as_view())
+    url(r'^team/$', Team.as_view()),
+    url(r'^videos/$', VideoListView.as_view()),
 ]

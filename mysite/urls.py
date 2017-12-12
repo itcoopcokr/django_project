@@ -18,6 +18,7 @@ from django.contrib import admin
 
 from .views import Home, Base, Team
 from videos.views import VideoListView
+from videos.views import VideoDetailView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^base/$', Base.as_view()),
     url(r'^team/$', Team.as_view()),
     url(r'^videos/$', VideoListView.as_view()),
+    url(r'^videos/(?P<pk>\d+)/$', VideoDetailView.as_view() )
 ]

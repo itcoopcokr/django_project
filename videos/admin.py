@@ -5,7 +5,7 @@ from .models import Video
 
 class VideoAdmin(admin.ModelAdmin):
     list_filter = ['title']
-    list_display = ['title','timestamp']
+    list_display = ['id','title','timestamp']
     search_fields = ['title']
     class Meta:
         model = Video

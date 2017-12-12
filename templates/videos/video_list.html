@@ -8,28 +8,19 @@
       <!--<th scope="col" class="text-center">비디오 1</th>-->
       <!--<th scope="col" class="text-center">비디오 2</th>-->
       <!--<th scope="col" class="text-center">비디오 3</th>-->
-      <th colspan="3" scope="col" class="text-center">
+      <th colspan="2" scope="col" class="text-center">
           총 비디오 {{all_count}}
       </th>
     </tr>
   </thead>
   <tbody>
-        <tr>
     {% for object in object_list %}
 
-        <!--<tr>-->
-          <td>
+        <tr>
+          <td>{{ object.title }}</td>
+          <td>{{ object.timestamp }}</td>
+        </tr>
 
-              {{object.embed_code|safe}} <br>
-              <center><b>{{object.title}}</b></center>
-
-          </td>
-        {% if forloop.counter|divisibleby:2 %}
-            </tr>
-            {% if forloop.counter != all_count %} <tr>{% endif %}
-        {% endif %}
-
-        <!--</tr>-->
     {% endfor %}
   </tbody>
 </table>

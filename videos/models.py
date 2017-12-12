@@ -8,3 +8,6 @@ class Video(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+    def get_absolute_url(self):
+        return '/videos/'

@@ -2,13 +2,18 @@
 
 
 {% block content %}
+
+<br>
+<a href="{% url 'video-create' %}" class="btn btn-primary" role="button">비디오 생성</a>
+<br><br>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <!--<th scope="col" class="text-center">비디오 1</th>-->
       <!--<th scope="col" class="text-center">비디오 2</th>-->
       <!--<th scope="col" class="text-center">비디오 3</th>-->
-      <th colspan="2" scope="col" class="text-center">
+      <th colspan="3" scope="col" class="text-center">
           총 비디오 {{all_count}}
       </th>
     </tr>
@@ -17,8 +22,9 @@
     {% for object in object_list %}
 
         <tr>
-          <td>{{ object.title }}</td>
+          <td><a href="{% url 'video-detail' object.id %}">{{ object.title }}</a></td>
           <td>{{ object.timestamp }}</td>
+          <td><a href="{% url 'video-update' object.id %}" class="btn btn-primary" role="button">Update</a></td>
         </tr>
 
     {% endfor %}

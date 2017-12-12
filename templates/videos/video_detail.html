@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-{{ object.title }}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+
+            {{ object }} <br>
+            {{ object.embed_code|safe }}
+
+            <br><br>
+            <a href="{% url 'video-update' object.id %}" class="btn btn-primary" role="button">Update</a>
+            <a href="{% url 'video-delete' object.id %}" class="btn btn-danger" role="button">Del</a>
+            <a href="javascript:history.back()" class="btn btn-secondary" role="button" >Back</a>
+
+        </div>
+    </div>
+</div>
 
 
-</body>
-</html>
+
+{% endblock %}}

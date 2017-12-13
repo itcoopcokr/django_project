@@ -23,7 +23,7 @@
 
         <tr>
           <td><a href="{% url 'video-detail' object.id %}">{{ object.title }}</a></td>
-          <td>{{ object.timestamp }}</td>
+          <td>{{ object.timestamp|date:"Y-m-d [H:i:s] " }}</td>
           <td><a href="{% url 'video-update' object.id %}" class="btn btn-primary" role="button">Update</a></td>
         </tr>
 

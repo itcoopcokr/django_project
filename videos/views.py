@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 from .models import Video
@@ -29,6 +30,19 @@ class VideoDetailView(DetailView):
 class VideoCreateView(CreateView):
     model = Video
     form_class = VideoForm
+    success_url = '/videos/'
+
+    def form_valid(self, form):
+        # print('form_valid')
+        # print(self.request.POST.get('title'))
+        # print(self.request.POST.get('embed_code'))
+        return super(VideoCreateView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        # print('form_in_valid')
+        # print(self.request.POST.get('title'))
+        # print(self.request.POST.get('embed_code'))
+        return super(VideoCreateView, self).form_invalid(form)
 
 class VideoUpdateView(UpdateView):
     model = Video

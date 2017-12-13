@@ -4,11 +4,28 @@
 
 <br><br>
 
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Send" class="btn btn-primary">
-    <a href="javascript:history.back()" class="btn btn-secondary" role="button">Back</a>
+<form method="post" action="">{% csrf_token %}
+  <div class="form-group row">
+    <label for="id_title" class="col-sm-2 col-form-label">Title:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="id_title" placeholder="타이틀 입력하세요">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="id_embed_code" class="col-sm-2 col-form-label">Embed code:</label>
+    <div class="col-sm-8">
+      <textarea cols="40" class="form-control" id="id_embed_code" name="embed_code" rows="10"
+                placeholder="비디오 경로를 입력하세요"
+                required></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10 text-center">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+      <a href="javascript:history.back()" class="btn btn-secondary" role="button">Back</a>
+    </div>
+  </div>
 </form>
 
 {% endblock %}

@@ -1,0 +1,846 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Modern Responsive Website</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="{% static './img/favicon.ico' %}">
+
+    <!-- google web font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="{% static './css/font-awesome/css/font-awesome.min.css' %}">
+
+    <!--bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" >
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'css/animate/animate.css' %}">
+
+    <!-- manific-popup css -->
+    <link rel="stylesheet" href="{% static 'css/magific-popup/magnific-popup.css' %}">
+
+    <!--owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl-carousel/owl.theme.default.css' %}">
+
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<!-- 메뉴 -->
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="./img/logo.png"></a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+             <ul class="navbar-nav">
+
+                 <li class="nav-item active">
+                     <a class="nav-link" href="#">Home</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#services">Services</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#about">About</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#work">Work</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#team">Team</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#testimonials">Testimonials</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#pricing">Pricing</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#stats">Stats</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#clients">Clients</a>
+                 </li>
+
+             </ul>
+         </div>
+    </nav>
+</header>
+
+<!--Home -->
+<section id="home">
+    <div id="home-cover" class="bg-parallax animated fadeIn">
+
+        <div id="home-content-box">
+            <div id="home-content-box-inner" class="text-center">
+
+                <div id="home-heading" class="animated zoomIn">
+                    <h3>Watch Out <br/> The Modern Responsive Website</h3>
+                </div>
+                <div id="home-btn" class="animated zoomIn">
+                    <a class="btn btn-lg btn-general btn-white" href="#work" role="button">View Our Work</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <div class="content-box">
+
+        <div class="content-title wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" >
+            <h3>Services</h3>
+            <div class="content-title-underline"></div>
+        </div>
+
+        <div class="container">
+            <div class="row wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                <div class="col-md-4">
+
+                    <div class="service-item">
+                        <div class="service-item-icon">
+                            <i class="fa fa-paint-brush fa-3x"></i>
+                        </div>
+                        <div class="service-item-title">
+                            <h3>Web Design</h3>
+                        </div>
+                        <div class="service-item-desc">
+                            <p>For faster mobile-friendly and responsive </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="service-item">
+                        <div class="service-item-icon">
+                            <i class="fa fa-laptop fa-3x"></i>
+                        </div>
+                        <div class="service-item-title">
+                            <h3>Web Development</h3>
+                        </div>
+                        <div class="service-item-desc">
+                            <p>For faster mobile-friendly and responsive </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-item-icon">
+                            <i class="fa fa-tablet fa-3x"></i>
+                        </div>
+                        <div class="service-item-title">
+                            <h3>Mobile Apps</h3>
+                        </div>
+                        <div class="service-item-desc">
+                            <p>For faster mobile-friendly and responsive </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-item-icon">
+                            <i class="fa fa-search fa-3x"></i>
+                        </div>
+                        <div class="service-item-title">
+                            <h3>SEO Optimizations</h3>
+                        </div>
+                        <div class="service-item-desc">
+                            <p>For faster mobile-friendly and responsive </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-item-icon">
+                            <i class="fa fa-pencil fa-3x"></i>
+                        </div>
+                        <div class="service-item-title">
+                            <h3>UX Design</h3>
+                        </div>
+                        <div class="service-item-desc">
+                            <p>For faster mobile-friendly and responsive </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-item-icon">
+                            <i class="fa fa-life-ring fa-3x"></i>
+                        </div>
+                        <div class="service-item-title">
+                            <h3>Support</h3>
+                        </div>
+                        <div class="service-item-desc">
+                            <p>For faster mobile-friendly and responsive </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- About -->
+<section id="about">
+
+    <!-- about right side-->
+    <div id="about-bg-diagonal" class="bg-parallax">
+    </div>
+
+    <!--about left side-->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div id="about-content-box">
+                    <div id="about-content-box-outer">
+                        <div id="about-content-box-inner">
+
+                            <div class="content-title wow animated fadeInDown"
+                                    data-wow-duration="1s" data-wow-delay=".5s" >
+                                <h3>About ITCOOP</h3>
+                                <div class="content-title-underline"></div>
+                            </div>
+                            <div id="about-desc" class="wow animated fadeInDown"
+                                    data-wow-duration="1s" data-wow-delay=".5s" >
+                                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a
+                                </p>
+                            </div>
+                            <div id="about-btn" class="wow animated fadeInUp"
+                                    data-wow-duration="1s" data-wow-delay=".5s" >
+                                <a class="btn btn-lg btn-general btn-blue" href="#work" role="button">Our Work</a>
+                            </div>
+
+                        </div>
+                    </div><!-- end <div id="about-content-box-outer">-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Work -->
+<section id="work">
+
+    <div class="content-box">
+        <div class="content-title wow animated fadeInDown"
+                data-wow-duration="1s" data-wow-delay=".5s" >
+            <h3>Our Work</h3>
+            <div class="content-title-underline"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row no-gutters">
+
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/1.jpg">
+                        <img src="./img/work/1.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/2.jpg">
+                        <img src="./img/work/2.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/3.jpg">
+                        <img src="./img/work/3.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/4.jpg">
+                        <img src="./img/work/4.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/5.jpg">
+                        <img src="./img/work/5.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/6.jpg">
+                        <img src="./img/work/6.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/7.jpg">
+                        <img src="./img/work/7.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="img-wrapper">
+                    <a href="./img/work/8.jpg">
+                        <img src="./img/work/8.jpg" class="img-fluid" alt="work">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+<!-- Team -->
+<section id="team">
+
+    <div class="content-box">
+        <div class="content-title wow animated fadeInDown"
+             data-wow-duration="1s" data-wow-delay=".5s">
+            <h3>Our Team</h3>
+            <div class="content-title-underline"></div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+            <div class="col-md-12">
+
+                <div id="team-members" class="owl-carousel owl-theme">
+
+                    <div class="team-member">
+                        <img src="./img/team/team-1.jpg" class="img-fluid">
+                        <div class="team-member-info text-center">
+                            <h4 class="team-member-name">Daniel Watrous</h4>
+                            <h4 class="team-member-designation">CEO</h4>
+                            <ul class="social-list">
+                                <li>
+                                    <a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="./img/team/team-2.jpg" class="img-fluid">
+                        <div class="team-member-info text-center">
+                            <h4 class="team-member-name">Sara Smith</h4>
+                            <h4 class="team-member-designation">Co-Founder</h4>
+                            <ul class="social-list">
+                                <li>
+                                    <a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="./img/team/team-3.jpg" class="img-fluid">
+                        <div class="team-member-info text-center">
+                            <h4 class="team-member-name">Steve Mike</h4>
+                            <h4 class="team-member-designation">Sr. Developer</h4>
+                            <ul class="social-list">
+                                <li>
+                                    <a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="./img/team/team-4.jpg" class="img-fluid">
+                        <div class="team-member-info text-center">
+                            <h4 class="team-member-name">Rober Hinary</h4>
+                            <h4 class="team-member-designation">Sr. Designer</h4>
+                            <ul class="social-list">
+                                <li>
+                                    <a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="./img/team/team-5.jpg" class="img-fluid">
+                        <div class="team-member-info text-center">
+                            <h4 class="team-member-name">Mike Tera</h4>
+                            <h4 class="team-member-designation">Sale</h4>
+                            <ul class="social-list">
+                                <li>
+                                    <a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="social-icon icon-gray">
+                                        <i class="fa fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- testimonial -->
+<section id="testimonials">
+    <div id="testimonials-cover" class="bg-parallax">
+
+        <div class="content-box">
+
+        <div class="content-title content-title-white">
+            <h3>What Our Customers Say</h3>
+            <div class="content-title-underline"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div id="customers-testimonials" class="text-center owl-carousel owl-theme">
+
+                        <div class="testimonial">
+                            <img src="./img/client/client-1.jpg" class="img-fluid rounded-circle">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <p>
+                                    <strong>Daniel Watrous</strong>
+                                    <span>CEO & Founder - Google</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./img/client/client-2.jpg" class="img-fluid rounded-circle">
+                            <blockquote class="text-center">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <p>
+                                    <strong>Johan Mathew</strong>
+                                    <span>CEO & Founder - Facebook</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./img/client/client-3.jpg" class="img-fluid rounded-circle">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <p>
+                                    <strong>Sara Smith</strong>
+                                    <span>CEO & Founder - Amazon</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+    <div class="content-box">
+
+        <div class="content-title">
+            <h3>Our Pricing</h3>
+            <div class="content-title-underline"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 wow animated zoomIn"
+                    data-wow-duration="1s" data-wow-delay=".5s" >
+
+                    <div class="pricing-box text-center">
+                        <h4 class="pricing-title">Basic</h4>
+                        <h4 class="pricing-value">49<sup>$</sup></h4>
+                        <ul class="pricing-spec">
+                            <li><p>500 EMAILS</p></li>
+                            <li><p>500 Disk Space</p></li>
+                            <li><p>500 BANDWIDTH</p></li>
+                            <li><p>UNLIMTED DOMAIN</p></li>
+                        </ul>
+                        <div class="pricing-btn">
+                            <a class="btn btn-lg btn-general btn-blue" href="#" role="button">
+                                Purchase</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 wow animated zoomIn"
+                    data-wow-duration="1s" data-wow-delay=".5s" >
+
+                    <div class="pricing-box pricing-box-lg text-center">
+                        <h4 class="pricing-title">Enterprise</h4>
+                        <h4 class="pricing-value">89<sup>$</sup></h4>
+                        <ul class="pricing-spec">
+                            <li><p>1000 EMAILS</p></li>
+                            <li><p>1000 Disk Space</p></li>
+                            <li><p>1000 BANDWIDTH</p></li>
+                            <li><p>UNLIMTED DOMAIN</p></li>
+                        </ul>
+                        <div class="pricing-btn">
+                            <a class="btn btn-lg btn-general btn-white" href="#" role="button">
+                                Purchase</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 wow animated zoomIn"
+                    data-wow-duration="1s" data-wow-delay=".5s" >
+
+                    <div class="pricing-box text-center">
+                        <h4 class="pricing-title">Standard</h4>
+                        <h4 class="pricing-value">149<sup>$</sup></h4>
+                        <ul class="pricing-spec">
+                            <li><p>5000 EMAILS</p></li>
+                            <li><p>5000 Disk Space</p></li>
+                            <li><p>5000 BANDWIDTH</p></li>
+                            <li><p>UNLIMTED DOMAIN</p></li>
+                        </ul>
+                        <div class="pricing-btn">
+                            <a class="btn btn-lg btn-general btn-blue" href="#" role="button">
+                                Purchase</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Stats -->
+<section id="stats">
+    <div id="stats-cover" class="bg-parallax">
+
+        <div class="content-box">
+            <div class="content-title content-title-white">
+                <h3>We Never Stop Improving</h3>
+                <div class="content-title-underline"></div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="stats-item">
+                            <i class="fa fa-cloud-download fa-5x"></i>
+                            <h2><span class="counter">1590</span><span>*</span> </h2>
+                            <p>Download</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="stats-item">
+                            <i class="fa fa-star-o fa-5x"></i>
+                            <h2><span class="counter">3500</span><span>*</span> </h2>
+                            <p>Awards</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="stats-item">
+                            <i class="fa fa-heart-o fa-5x"></i>
+                            <h2><span class="counter">1199</span><span>*</span> </h2>
+                            <p>Likes</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="stats-item">
+                            <i class="fa fa-check fa-5x"></i>
+                            <h2><span class="counter">2200</span><span>*</span> </h2>
+                            <p>Recommended</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!--Clients -->
+<section id="clients">
+    <div class="content-box">
+        <div class="content-title wow animated fadeInDown"
+                data-wow-duration="1s" data-wow-delay="0.5s" >
+            <h3>Clients</h3>
+            <div class="content-title-underline"></div>
+        </div>
+
+        <div class="container">
+            <div class="row wow animated bounceInDown"
+                 data-wow-duration="1s" data-wow-delay="0.5s" >
+
+                <div class="col-md-12">
+
+
+                    <div id="clients-list" class="owl-carousel owl-theme">
+                        <div class="client">
+                            <img src="./img/client/logos/logo-1.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-2.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-3.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-4.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-5.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-6.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-7.jpg" class="img-fluid">
+                        </div>
+                        <div class="client">
+                            <img src="./img/client/logos/logo-8.jpg" class="img-fluid">
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!--footer-->
+<footer>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div id="contact-left">
+                        <h3>ITCOOP</h3>
+                        <p>
+                            We believe in <strong>Simple</strong>,
+                            <strong>Clean</strong> & <strong>Modern</strong>
+                            Design Standards with responseive Apporach.
+                            Browse the amazing work of our company.
+                        </p>
+                        <div id="contact-info">
+                            <address>
+                                <strong>Headquarters:</strong><br/>
+                                <p>
+                                    221 Jockey Hollow, Suite 600<br>
+                                    Smithtown, NY 11879
+                                </p>
+                            </address>
+                            <div id="phone-fax-email">
+                                <p>
+                                    <strong>Phone:</strong><span> (91) 8974 5683</span><br/>
+                                    <strong>Fax:</strong><span> (91) 8974 5683</span><br/>
+                                    <strong>Email:</strong><span> info@itcoop.co.kr</span><br/>
+                                </p>
+                            </div>
+
+                        </div>
+                        <ul class="social-list">
+                            <li><a href="#" class="social-icon icon-white">
+                                    <i class="fa fa-facebook"></i>
+                                </a></li>
+                            <li><a href="#" class="social-icon icon-white">
+                                    <i class="fa fa-twitter"></i>
+                                </a></li>
+                            <li><a href="#" class="social-icon icon-white">
+                                    <i class="fa fa-youtube-play"></i>
+                                </a></li>
+                            <li>
+                                <a href="#" class="social-icon icon-white">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div id="contact-right">
+
+                        <h3>Contact Us</h3>
+                        <form action="#">
+                            <input type="text" name="full-name" placeholder="Full Name" class="form-control">
+                            <input type="text" name="email" placeholder="Email" class="form-control">
+                            <textarea rows="5" name="message" placeholder="Message..." class="form-control"></textarea>
+
+                            <div id="send-btn">
+                                <a class="btn btn-lg btn-general btn-white" href="#" role="button">SEND</a>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-bottom">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="footer-copyrights">
+                        <p>Copyrights &copy; 2017 All Rights Reserved by ITCOOP Inc.</p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div id="footer-menu">
+                        <ul>
+                            <li><a href="#home">Home</a> </li>
+                            <li><a href="#services">Service</a> </li>
+                            <li><a href="#work">Work</a> </li>
+                            <li><a href="#team">Team</a> </li>
+                            <li><a href="#testimonials">Testimonials</a> </li>
+                            <li><a href="#pricing">Pricing</a> </li>
+                            <li><a href="#stats">Stats</a> </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- jQuery -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" ></script>
+
+<!-- bootstrap javascript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" ></script>
+
+<!-- wow JS -->
+<script src="{% static 'js/wow/wow.min.js' %}"></script>
+
+<!-- manific-popup JS -->
+<script src="{% static 'js/magific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+<!-- owl carousel JS-->
+<script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+
+<!-- countup JS -->
+<script src="{% static 'js/counter/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/counter/jquery.counterup.min.js' %}"></script>
+
+<!-- custom javascript-->
+<script type="text/javascript" src="{% static 'js/custom.js' %} "></script>
+</body>
+</html>

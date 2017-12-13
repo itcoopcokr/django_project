@@ -15,3 +15,7 @@ class Base(View):
 class Team(View):
     def get(self, request, *args, **kwargs):
         return render(request,"team.html", { } )
+
+class Landingpage(View):
+    def get(self, request, *args, **kwargs):
+        return render(request,"index.html", { } )

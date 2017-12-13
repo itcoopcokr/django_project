@@ -18,4 +18,4 @@ class Team(View):
 
 class Landingpage(View):
     def get(self, request, *args, **kwargs):
-        return render(request,"index.html", { } )
+        return render(request,"landingpage.html", { } )

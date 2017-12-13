@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^$', Home.as_view()),
     url(r'^base/$', Base.as_view()),
     url(r'^team/$', Team.as_view()),
-    url(r'^landingpage/$', Landingpage.as_view()),
+    url(r'^index/$', Landingpage.as_view()),
     url(r'^videos/$', VideoListView.as_view(), name='videos'),
     url(r'^videos/(?P<pk>\d+)/$',VideoDetailView.as_view(), name='video-detail'),
     url(r'^videos/create/$', VideoCreateView.as_view(), name='video-create'),

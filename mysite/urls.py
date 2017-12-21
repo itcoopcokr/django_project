@@ -25,13 +25,13 @@ from videos.views import (
     VideoDeleteView
 )
 
-from .views import UserCreateView
+from .views import UserCreateView, UserCreateDoneView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'accounts/', include('django.contrib.auth.urls')),
     url(r'accounts/register/$', UserCreateView.as_view(), name='register'),
-
+    url(r'accounts/register/done/$', UserCreateDoneView.as_view(), name='register_done'),
     url(r'^$', Home.as_view()),
     url(r'^base/$', Base.as_view()),
     url(r'^team/$', Team.as_view()),

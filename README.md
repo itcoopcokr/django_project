@@ -15,6 +15,12 @@ git push itcoop_django
 
 <br/>
 
+## ssh keygen 
+- git push 에러가 날 때 
+- https://opentutorials.org/module/2113/12295
+
+---
+
 ## 기본 파이썬 환경 설치 
 - pip : python install package 
 ~~~

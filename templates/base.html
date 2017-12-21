@@ -17,6 +17,18 @@
 </head>
 <body>
 
+{% block login %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+
+            <a href="{% url 'register' %}">회원가입</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 
 <div class="container">
     <div class="row">
@@ -26,7 +38,7 @@
                <ul>
                    <li><a href="/">홈</a></li>
                    <li><a href="{% url 'videos' %}">비디오</a></li>
-                   <li>게시판</li>
+                   <li><a href="/index/">Landing Page</a></li>
                </ul>
             {% endblock %}
         </div>

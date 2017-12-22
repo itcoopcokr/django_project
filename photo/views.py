@@ -14,3 +14,8 @@ class PhotoListView(ListView):
     model = Photo
     template_name = 'photo/photo_list.html'
 
+class PhotoDetailView(DetailView):
+    model = Photo
+    template_name = 'photo/photo_detail.html'
+
+

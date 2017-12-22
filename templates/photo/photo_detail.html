@@ -16,13 +16,19 @@
               <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
                 <div class="col-sm-6">
-                  <img class="img-fluid" src="{{ object.image.thumb_url}}">
+                  <img src="{{ object.image.thumb_url }}" class="img-fluid" >
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
+                <div class="col-sm-6">
+                  <img src="{{ object.image.url }}" class="img-fluid" >
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
                 <div class="col-sm-8">
-                  <textarea class="form-control" rows="3" disabled>{{photo.description}}</textarea>
+                  <textarea class="form-control" rows="3" disabled>{{object.description}}</textarea>
                 </div>
               </div>
               <div class="form-group row">

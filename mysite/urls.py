@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 from .views import Home, Base, Team, Landingpage
 from videos.views import VideoListView
 from videos.views import (
@@ -24,7 +27,7 @@ from videos.views import (
     VideoUpdateView,
     VideoDeleteView
 )
-
+from photo.views import PhotoDetailView
 from .views import UserCreateView, UserCreateDoneView
 
 urlpatterns = [
@@ -41,6 +44,8 @@ urlpatterns = [
     url(r'^videos/create/$', VideoCreateView.as_view(), name='video-create'),
     url(r'^videos/(?P<pk>\d+)/update/$', VideoUpdateView.as_view(), name='video-update' ),
     url(r'^videos/(?P<pk>\d+)/delete/$', VideoDeleteView.as_view(), name='video-delete' ),
-    url(r'^photo/', include('photo.urls', namespace='photo'))
+    url(r'^photo/', include('photo.urls', namespace='photo')),
 
 ]
+if settings.DEBUG :
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

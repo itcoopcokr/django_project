@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^videos/(?P<pk>\d+)/$',VideoDetailView.as_view(), name='video-detail'),
     url(r'^videos/create/$', VideoCreateView.as_view(), name='video-create'),
     url(r'^videos/(?P<pk>\d+)/update/$', VideoUpdateView.as_view(), name='video-update' ),
-    url(r'^videos/(?P<pk>\d+)/delete/$', VideoDeleteView.as_view(), name='video-delete' )
-
+    url(r'^videos/(?P<pk>\d+)/delete/$', VideoDeleteView.as_view(), name='video-delete' ),
+    url(r'^photo/', include('photo.urls', namespace='photo'))
 
 ]

@@ -12,6 +12,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
                         <th scope="col">Image</th>
+                        <th scope="col">User</th>
                         <th scope="col">Date</th>
                     </tr>
                 </thead>
@@ -21,6 +22,7 @@
                         <th scope="row">{{ forloop.counter}}</th>
                         <td><a href="{{ item.get_absolute_url }}">{{ item.title}}</a></td>
                         <td><img class="img-fluid img-thumbnail" src="{{item.image.thumb_url}}"> </td>
+                        <td>{{ item.user.username }}</td>
                         <td>{{ item.timestamp|date:"Y-m-d" }}</td>
                     </tr>
                     {% endfor %}
@@ -28,7 +30,7 @@
             </table>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-md-12 text-center">
               <a href="{% url 'photo:create' %}" class="btn btn-primary" role="button">Add</a>

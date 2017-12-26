@@ -25,4 +25,14 @@ class PhotoCreateView(CreateView):
     template_name = 'photo/photo_create.html'
     form_class = PhotoForm
 
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.user = self.request.user
+        obj.save()
 
+        return super(PhotoCreateView, self).form_valid(form)
+
+class PhotoUpdateView(UpdateView):
+    model = Photo
+    form_class = PhotoForm
+    template_name = 'photo/photo_update.html'

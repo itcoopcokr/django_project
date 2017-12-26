@@ -36,3 +36,8 @@ class PhotoUpdateView(UpdateView):
     model = Photo
     form_class = PhotoForm
     template_name = 'photo/photo_update.html'
+
+class PhotoDeleteView(DeleteView):
+    model = Photo
+    template_name = 'photo/photo_delete_confirm.html'
+    success_url = '/photo/'

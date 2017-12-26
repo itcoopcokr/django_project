@@ -118,7 +118,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-VENV_PATH = os.path.dirname(BASE_DIR)  # 상위 폴더
+# VENV_PATH = os.path.dirname(BASE_DIR)  # 상위 폴더
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -126,6 +126,6 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(VENV_PATH, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 LOGIN_REDIRECT_URL = '/'

@@ -48,7 +48,6 @@ class PhotoDeleteView(DeleteView):
 
 class PhotoAjaxDeleteView(DeleteView):
     model = Photo
-    # template_name = 'photo/photo_delete_confirm.html'
     success_url = '/photo/'
 
     # allow delete only logged in user by appling decorator
@@ -59,10 +58,8 @@ class PhotoAjaxDeleteView(DeleteView):
         resp = super(PhotoAjaxDeleteView, self).dispatch(*args, **kwargs)
         if self.request.is_ajax():
             response_data = {"result": "ok"}
-            print("ajax ok")
             return HttpResponse(json.dumps(response_data),
                                 content_type="application/json")
         else:
             # POST request (not ajax) will do a redirect to success_url
-            print("ajax fail")
             return resp

@@ -8,6 +8,7 @@ from .views import (
     PhotoCreateView,
     PhotoUpdateView,
     PhotoDeleteView,
+    PhotoAjaxDeleteView,
 )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     url(r'^create/$',PhotoCreateView.as_view(), name='create'),
     url(r'^(?P<pk>\d+)/update/$',PhotoUpdateView.as_view(), name='update'),
     url(r'^(?P<pk>\d+)/delete/$',PhotoDeleteView.as_view(), name='delete'),
+    url(r'^(?P<pk>\d+)/delete_ajax/$',PhotoAjaxDeleteView.as_view(), name='delete_ajax'),
 ]

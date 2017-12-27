@@ -29,6 +29,8 @@
                 <div class="col-sm-8 text-center">
                   <a href="{% url 'photo:update' object.pk %}" class="btn btn-primary" role="button">Update</a>
                   <a href="{% url 'photo:delete' object.pk %}" class="btn btn-danger" role="button">Delete</a>
+                  <a id="delete_btn" href="{% url 'photo:delete_ajax' object.pk %}" class="btn btn-danger"
+                     role="button">Delete_Ajax</a>
                   <a href="{% url 'photo:list' %}" class="btn btn-secondary" role="button">Photo</a>
                 </div>
               </div>
@@ -39,4 +41,64 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    $(document).ready(function() {
+
+        var csrftoken = getCookie('csrftoken');
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            crossDomain: false, // obviates need for sameOrigin test
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        // This function must be customized
+        var onDelete = function(){
+            if (confirm('삭제하시겠습니까?')==true) {
+                $.post(this.href, function (data) {
+                    if (data.result == "ok") {
+                        // alert("data deleted successfully");
+                        location.href= "/photo/" ;
+                    } else {
+                        // handle error processed by server here
+                        alert("server error");
+                    }
+                }).fail(function () {
+                    // handle unexpected error here
+                    alert("error");
+                });
+                return false;
+            }
+        }
+
+        $("#delete_btn").click(onDelete);
+    });
+</script>
 {% endblock %}

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+import json
 
 from django.views.generic import (
     ListView,
@@ -43,3 +45,18 @@ class PhotoDeleteView(DeleteView):
     model = Photo
     template_name = 'photo/photo_delete_confirm.html'
     success_url = '/photo/'
+
+class PhotoAjaxDeleteView(DeleteView):
+    # allow delete only logged in user by appling decorator
+    # @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        # maybe do some checks here for permissions ...
+
+        resp = super(PhotoDeleteView, self).dispatch(*args, **kwargs)
+        if self.request.is_ajax():
+            response_data = {"result": "ok"}
+            return HttpResponse(json.dumps(response_data),
+                                content_type="application/json")
+        else:
+            # POST request (not ajax) will do a redirect to success_url
+            return resp

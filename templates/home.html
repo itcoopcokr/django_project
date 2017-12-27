@@ -9,42 +9,17 @@
 <h3>
     안녕하세요
 </h3>
-{% for photo in photo_list %}
-    {{ photo.title}}
-{% endfor %}
+
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th width="10%">#</th>
-      <th width="30%">First Name22</th>
-      <th width="30%">Last Name</th>
-      <th width="30%">Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
+        {% for photo in photo_list %}
+        <div class="col-3">
+            <img class="img-fluid" src="{{ photo.image.url}}">
         </div>
+        {% endfor %}
+
     </div>
 </div>
 

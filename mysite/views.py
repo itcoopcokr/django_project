@@ -10,9 +10,7 @@ from photo.models import Photo
 class Home(View):
     def get(self, request, *args, **kwargs):
         qs = Photo.objects.all()[:3]
-        context = {
-            "name" :"John"
-        }
+        context = {}
         context["photo_list"] = qs
         return render(request,"home.html", context )
 

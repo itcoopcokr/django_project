@@ -5,11 +5,15 @@ from django.views.generic import TemplateView, CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.core.urlresolvers import reverse_lazy
 
+from photo.models import Photo
+
 class Home(View):
     def get(self, request, *args, **kwargs):
+        qs = Photo.objects.all()[:3]
         context = {
             "name" :"John"
         }
+        context["photo_list"] = qs
         return render(request,"home.html", context )
 
 class Base(View):

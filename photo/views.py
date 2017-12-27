@@ -15,6 +15,8 @@ from .forms import PhotoForm
 class PhotoListView(ListView):
     model = Photo
     template_name = 'photo/photo_list.html'
+    paginate_by = 2
+
 
 class PhotoDetailView(DetailView):
     model = Photo

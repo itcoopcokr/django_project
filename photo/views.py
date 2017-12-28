@@ -19,6 +19,12 @@ class PhotoListView(ListView):
     template_name = 'photo/photo_list.html'
     paginate_by = 2
 
+    def get_context_data(self, *args,  **kwargs):
+        context = super(PhotoListView, self).get_context_data(**kwargs)
+        # context['picture'] = Picture.objects.filter(your_condition)
+        context['check'] = self.kwargs.get('check')
+        return context
+
 
 class PhotoDetailView(DetailView):
     model = Photo

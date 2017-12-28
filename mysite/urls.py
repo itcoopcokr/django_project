@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^videos/(?P<pk>\d+)/update/$', VideoUpdateView.as_view(), name='video-update' ),
     url(r'^videos/(?P<pk>\d+)/delete/$', VideoDeleteView.as_view(), name='video-delete' ),
     url(r'^photo/', include('photo.urls', namespace='photo')),
+    url(r'^board/', include('board.urls', namespace='board')),
 
 ]
 if settings.DEBUG :

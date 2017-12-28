@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-center">Board
+    {% if check == "1" %}1 : 기초
+    {% elif check == "2" %} 2 : 중간
+    {% endif %}
+
+</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in object_list %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter}}</th>
+                        <td><a href="{{ item.get_absolute_url }}">{{ item.title}}</a></td>
+                        <td><img class="img-fluid img-thumbnail" src="{{item.image.url}}" width="100px" height="100px"> </td>
+                        <td>{{ item.user.username }}</td>
+                        <td>{{ item.timestamp|date:"Y-m-d" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% if user.is_active %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+              <a href="{% url 'board:create' check %}" class="btn btn-primary" role="button">Add</a>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+        {% if is_paginated %}
+            <div class="pagination">
+                <span class="page-links">
+                    {% if page_obj.has_previous %}
+                        <a href="/board?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+                    <span class="page-current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a href="/board?page={{ page_obj.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
+

@@ -202,6 +202,26 @@ urlpatterns = [
     url(r'^done/$',ContactDoneView.as_view(), name='done')
 ]
 ~~~
+- landingpage.html
+    - form 내용 
+~~~
+    <h3>Contact Us</h3>
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ form.errors }}
+    </div>
+    {% endif %}
+    <form method="post" action="/contact/create/">{% csrf_token %}
+        <input type="text" name="name" placeholder="Full Name" class="form-control" required>
+        <input type="email" name="email" placeholder="Email" class="form-control" required>
+        <textarea rows="5" name="message" placeholder="Message..." class="form-control" required></textarea>
+
+        <div id="send-btn">
+            <button type="submit" class="btn btn-lg btn-general">SEND</button>
+        </div>
+
+    </form>
+~~~                        
 
     
     

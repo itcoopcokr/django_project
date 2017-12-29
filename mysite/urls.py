@@ -46,6 +46,8 @@ urlpatterns = [
     url(r'^videos/(?P<pk>\d+)/delete/$', VideoDeleteView.as_view(), name='video-delete' ),
     url(r'^photo/', include('photo.urls', namespace='photo')),
     url(r'^board/', include('board.urls', namespace='board')),
+    url(r'^contact/', include('contact.urls', namespace='contact')),
+
 
 ]
 if settings.DEBUG :

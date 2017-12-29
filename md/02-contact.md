@@ -74,4 +74,134 @@ class ContactAdmin(admin.ModelAdmin):
 
 admin.site.register(Contact,ContactAdmin )
 ~~~
+- /contact/models.py
+    - 날짜,시간추가 
+    - 추가 : timestamp = models.DateTimeField(auto_now_add=True)
+~~~
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+~~~  
+- DB 업데이트 
+~~~
+$ python manage.py makemigrations
+
+You are trying to add the field 'timestamp' with 'auto_now_add=True' to contact without a default; the database needs something to populate existing rows.
+
+ 1) Provide a one-off default now (will be set on all existing rows)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+You can accept the default 'timezone.now' by pressing 'Enter' or you can provide another value.
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+[default: timezone.now] >>> timezone.now
+Migrations for 'contact':
+  contact/migrations/0002_contact_time
+~~~
+~~~
+$ python manage.py migrate
+~~~
+
+- 사용자가 contact 보낼 때 입력
+    - /contact/views.py
+~~~
+from django.shortcuts import render
+
+from django.views.generic import CreateView, TemplateView
+
+from .models import Contact
+from .forms import ContactForm
+
+# Create your views here.
+class ContactCreateView(CreateView):
+    model = Contact
+    template_name = 'landingpage.html'
+    success_url = '/contact/done'
+    form_class = ContactForm
+~~~
+- 폼 구성 
+    - /contact/forms.py
+~~~
+from django import forms
+
+from .models import Contact
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = [
+            'name',
+            'email',
+            'message'
+        ]
+~~~  
+- contact 완료 메세지 
+    - /contact/views.py
+~~~
+class ContactDoneView(TemplateView):
+    template_name = 'contact_done.html'
+~~~
+- /templates/
+    - 추가 : contact_done.html
+~~~
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <h1>메세지가 접수됐습니다.</h1>
+            <p><a href="/" class="btn btn-secondary" role="button">Home</a> </p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+~~~    
+
+## 이동경로 urls
+
+- /mysite/urls.py
+    - contact.urls
+~~~
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'accounts/', include('django.contrib.auth.urls')),
+    url(r'accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'accounts/register/done/$', UserCreateDoneView.as_view(), name='register_done'),
+    url(r'^$', Home.as_view()),
+    url(r'^base/$', Base.as_view()),
+    url(r'^team/$', Team.as_view()),
+    url(r'^index/$', Landingpage.as_view()),
+    url(r'^videos/$', VideoListView.as_view(), name='videos'),
+    url(r'^videos/(?P<pk>\d+)/$',VideoDetailView.as_view(), name='video-detail'),
+    url(r'^videos/create/$', VideoCreateView.as_view(), name='video-create'),
+    url(r'^videos/(?P<pk>\d+)/update/$', VideoUpdateView.as_view(), name='video-update' ),
+    url(r'^videos/(?P<pk>\d+)/delete/$', VideoDeleteView.as_view(), name='video-delete' ),
+    url(r'^photo/', include('photo.urls', namespace='photo')),
+    url(r'^board/', include('board.urls', namespace='board')),
+    url(r'^contact/', include('contact.urls', namespace='contact')),
+]                      
+~~~
+- /contact/urls.py
+~~~
+from django.conf.urls import url
+
+from .views import ContactCreateView, ContactDoneView
+
+urlpatterns = [
+    url(r'^create/$',ContactCreateView.as_view(), name='create'),
+    url(r'^done/$',ContactDoneView.as_view(), name='done')
+]
+~~~
+
+    
     
